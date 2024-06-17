@@ -28,7 +28,7 @@ jobs:
           caching: 'false'
 
       - name: Display the result from a step in composite action
-        run: echo ${{steps.composite_action}}
+        run: echo ${{steps.composite_action.outputs.compose-out}}
 
       - name: Test code
         id: run-tests
