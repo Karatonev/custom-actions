@@ -8,7 +8,7 @@ inputs:
 outputs:
      compose-out:
        description: 'Some value'
-       value: ${{ steps.install.output.cache_was_used}}
+       value: ${{ steps.install.outputs.cache_was_used}}
 runs:
     using: 'composite'
 
