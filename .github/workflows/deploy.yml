@@ -22,9 +22,13 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Use composite cache actions
+        id: composite_action
         uses: ./.github/actions/cached-deps
         with:
           caching: 'false'
+
+      - name: Display the result from a step in composite action
+        run: echo ${{steps.composite_action}}
 
       - name: Test code
         id: run-tests
