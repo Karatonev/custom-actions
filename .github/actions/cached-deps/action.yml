@@ -2,6 +2,7 @@ name: 'Get & Cache Dependencies'
 description: 'Get and cache Dependencies'
 runs:
     using: 'composite'
+
     steps:
       
       - name: Cache dependencies
@@ -14,6 +15,7 @@ runs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+        shell: bash
       
       - name: Build website
         run: npm run build
